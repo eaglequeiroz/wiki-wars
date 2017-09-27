@@ -7,6 +7,7 @@ import {
   NavLink
   } from 'react-router-dom';
 import 'semantic-ui-css/semantic.min.css';
+import './App.css';
 import Home from './pages/Home'
 import People from './pages/People';
 import Films from './pages/Films';
@@ -14,7 +15,6 @@ import Starships from './pages/Starships';
 import Vehicles from './pages/Vehicles';
 import Species from './pages/Species';
 import Planets from './pages/Planets';
-
 
 ReactDOM.render((
   <Router>
@@ -33,7 +33,7 @@ ReactDOM.render((
       </div>
 
       <section>
-        <div className="ui text container">
+        <div>
           <Route exact path="/" component={Home} />
           <Route exact path="/people" component={People} />
           <Route exact path="/films" component={Films} />
