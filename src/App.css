@@ -3,6 +3,16 @@
 }
 
 .socialIcons {
-  width: 100px !important;
-  height: auto !important;
+  width: 100px;
+  height: auto;
+}
+
+.inputSearch{
+  width:300px;
+  margin: 5px !important;
+  padding: 5px !important;
+}
+
+.centerBox {
+  text-align: center;
 }
