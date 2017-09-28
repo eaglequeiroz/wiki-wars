@@ -1,93 +1,57 @@
 import React from 'react';
-import github from '../assets/images/home/social-github-pic.png'
+import SearchField from '../components/SearchField';
+import ResultSearch from '../components/ResultSearch';
+
+const fullURL = 'https://swapi.co/api/people/';
 
 export default class People extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      searchText: '',
+      query: '',
+      people: [],
+      next: '',
+      previous: ''
+      };
+
+      this.handleSearchChange = this.handleSearchChange.bind(this);
+      this.handleClickSearch = this.handleClickSearch.bind(this);
+    }
+
+handleSearchChange(searchText){
+  this.setState({
+      searchText: searchText,
+    });
+}
+
+handleClickSearch(query){
+  this.setState({
+      query: query,
+    });
+
+    fetch(query)
+    .then((response) => response.json())
+    .then((responseJson) => {
+        this.setState({ next: responseJson.next })
+        this.setState({ previous: responseJson.previous })
+        this.setState({ people: responseJson.results.map(obj => obj) });
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+}
+
   render() {
 
     return (
       <div>
 
-        <div>
-          <div className="ui input">
-            <input type="text" placeholder="Search for your character here..." className="inputSearch" />
-          </div>
-            <button className="ui button">Search</button>
-        </div>
-
-        <div className="container">
-
-        <div className="ui five column grid container">
-
-          <div className="column">
-            <figure>
-              <img className="socialIcons ui image" src={github} alt=""/>
-              <figcaption>Character Name</figcaption>
-            </figure>
-          </div>
-          <div className="column">
-            <figure>
-              <img className="socialIcons ui image" src={github} alt=""/>
-              <figcaption>Character Name</figcaption>
-            </figure>
-          </div>
-          <div className="column">
-            <figure>
-              <img className="socialIcons ui image" src={github} alt=""/>
-              <figcaption>Character Name</figcaption>
-            </figure>
-          </div>
-          <div className="column">
-            <figure>
-              <img className="socialIcons ui image" src={github} alt=""/>
-              <figcaption>Character Name</figcaption>
-            </figure>
-          </div>
-          <div className="column">
-            <figure>
-              <img className="socialIcons ui image" src={github} alt=""/>
-              <figcaption>Character Name</figcaption>
-            </figure>
-          </div>
-
-          <div className="column">
-            <figure>
-              <img className="socialIcons ui image" src={github} alt=""/>
-              <figcaption>Character Name</figcaption>
-            </figure>
-          </div>
-          <div className="column">
-            <figure>
-              <img className="socialIcons ui image" src={github} alt=""/>
-              <figcaption>Character Name</figcaption>
-            </figure>
-          </div>
-          <div className="column">
-            <figure>
-              <img className="socialIcons ui image" src={github} alt=""/>
-              <figcaption>Character Name</figcaption>
-            </figure>
-          </div>
-          <div className="column">
-            <figure>
-              <img className="socialIcons ui image" src={github} alt=""/>
-              <figcaption>Character Name</figcaption>
-            </figure>
-          </div>
-          <div className="column">
-            <figure>
-              <img className="socialIcons ui image" src={github} alt=""/>
-              <figcaption>Character Name</figcaption>
-            </figure>
-          </div>
-
-        </div>
-        <div className="centerBox"  >
-            <i className="arrow left huge icon" aria-hidden="true"></i>
-            <i className="arrow right huge icon" aria-hidden="true"></i>
-        </div>
-
-      </div>
-
+        <SearchField inputSearch={this.state.searchText} fullURL={fullURL} onInputSearchChange={this.handleSearchChange} onClickSearch={this.handleClickSearch}/>
+        { console.log(this.state) }
+        <ResultSearch result={this.state.people} />
+        
       </div>
     );
   }
