@@ -28,7 +28,7 @@ handleSearchInputChange(e){
     return (
       <div>
           <div className="ui input">
-            <input type="text" placeholder="Search for your character here..." className="inputSearch" value={this.props.inputSearch} onChange={this.handleSearchInputChange}/>
+            <input type="text" placeholder={this.props.placeHolder} className="inputSearch" value={this.props.inputSearch} onChange={this.handleSearchInputChange}/>
           </div>
             <button className="ui button" onClick={this.handleSearchClick}>Search</button>
       </div>

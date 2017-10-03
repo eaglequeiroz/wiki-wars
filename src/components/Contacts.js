@@ -10,14 +10,14 @@ export default class Contacts extends Component {
 
     render() {
     return (
-      <div>
+      <div className="ui small images">
 
-        <a href="https://www.linkedin.com/in/eaglequeiroz" target="_blank" rel="noopener noreferrer" ><img src={linkedin} alt="Eaglequeiroz Linkeding profile" className="socialIcons"/></a>
-        <a href="https://github.com/eaglequeiroz" target="_blank" rel="noopener noreferrer" ><img src={github} alt="Eaglequeiroz Github profile" className="socialIcons"/></a>
-        <a href="https://twitter.com/eaglequeiroz" target="_blank" rel="noopener noreferrer" ><img src={twitter} alt="Eaglequeiroz Twitter profile" className="socialIcons"/></a>
-        <a href="https://www.facebook.com/eaglequeiroz" target="_blank" rel="noopener noreferrer" ><img src={facebook} alt="Eaglequeiroz Facebook profile" className="socialIcons"/></a>
-        <a href="https://www.instagram.com/eaglequeiroz" target="_blank" rel="noopener noreferrer" ><img src={instagram} alt="Eaglequeiroz Instagram profile" className="socialIcons"/></a>
-        <a href="mailto:igorfqueirozz@gmail.com" target="_top" rel="noopener noreferrer" ><img src={email} alt="Eaglequeiroz's Email" className="socialIcons"/></a>
+        <a href="https://www.linkedin.com/in/eaglequeiroz" target="_blank" rel="noopener noreferrer" ><img src={linkedin} alt="Eaglequeiroz Linkeding profile" /></a>
+        <a href="https://github.com/eaglequeiroz" target="_blank" rel="noopener noreferrer" ><img src={github} alt="Eaglequeiroz Github profile" /></a>
+        <a href="https://twitter.com/eaglequeiroz" target="_blank" rel="noopener noreferrer" ><img src={twitter} alt="Eaglequeiroz Twitter profile" /></a>
+        <a href="https://www.facebook.com/eaglequeiroz" target="_blank" rel="noopener noreferrer" ><img src={facebook} alt="Eaglequeiroz Facebook profile" /></a>
+        <a href="https://www.instagram.com/eaglequeiroz" target="_blank" rel="noopener noreferrer" ><img src={instagram} alt="Eaglequeiroz Instagram profile" /></a>
+        <a href="mailto:igorfqueirozz@gmail.com" target="_top" rel="noopener noreferrer" ><img src={email} alt="Eaglequeiroz's Email" /></a>
 
       </div>
     );

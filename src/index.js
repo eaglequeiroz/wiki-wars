@@ -4,12 +4,14 @@ import registerServiceWorker from './registerServiceWorker';
 import {
   BrowserRouter as Router,
   Route,
-  NavLink
+  NavLink,
+  Switch
   } from 'react-router-dom';
 import 'semantic-ui-css/semantic.min.css';
 import './App.css';
 import Home from './pages/Home'
 import People from './pages/People';
+import PeopleDetail from './pages/PeopleDetail';
 import Films from './pages/Films';
 import Starships from './pages/Starships';
 import Vehicles from './pages/Vehicles';
@@ -34,13 +36,16 @@ ReactDOM.render((
 
       <section>
         <div>
-          <Route exact path="/" component={Home} />
-          <Route exact path="/people" component={People} />
-          <Route exact path="/films" component={Films} />
-          <Route exact path="/starships" component={Starships} />
-          <Route exact path="/vehicles" component={Vehicles} />
-          <Route exact path="/species" component={Species} />
-          <Route exact path="/planets" component={Planets} />
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route path="/people" component={People} />
+            <Route path="/detail/people/:id" component={PeopleDetail}  />
+            <Route path="/films" component={Films} />
+            <Route path="/starships" component={Starships} />
+            <Route path="/vehicles" component={Vehicles} />
+            <Route path="/species" component={Species} />
+            <Route path="/planets" component={Planets} />
+          </Switch>
         </div>
       </section>
 

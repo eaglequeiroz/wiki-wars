@@ -2,17 +2,12 @@
   font-size: large;
 }
 
-.socialIcons {
-  width: 100px;
-  height: auto;
-}
-
 .inputSearch{
   width:300px;
   margin: 5px !important;
   padding: 5px !important;
 }
 
-.centerBox {
+.center {
   text-align: center;
 }

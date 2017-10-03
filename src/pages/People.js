@@ -3,6 +3,7 @@ import SearchField from '../components/SearchField';
 import ResultSearch from '../components/ResultSearch';
 
 const fullURL = 'https://swapi.co/api/people/';
+const placeHolderText = 'Search for your character here...';
 
 export default class People extends React.Component {
 
@@ -48,10 +49,16 @@ handleClickSearch(query){
     return (
       <div>
 
-        <SearchField inputSearch={this.state.searchText} fullURL={fullURL} onInputSearchChange={this.handleSearchChange} onClickSearch={this.handleClickSearch}/>
+        <SearchField  inputSearch={this.state.searchText}
+                      fullURL={fullURL}
+                      onInputSearchChange={this.handleSearchChange}
+                      onClickSearch={this.handleClickSearch}
+                      placeHolder={placeHolderText}/>
         { console.log(this.state) }
-        <ResultSearch result={this.state.people} />
-        
+        <ResultSearch result={this.state.people}
+                      next={this.state.next}
+                      previous={this.state.previous} />
+
       </div>
     );
   }
