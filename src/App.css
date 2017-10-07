@@ -11,3 +11,16 @@
 .center {
   text-align: center;
 }
+
+.labelStyle{
+  font-size: large;
+  font-weight: bold;
+}
+
+.spanStyle{
+  color: #111111;
+  float: left;
+  font-size: large;
+  font-style: italic;
+  margin-left: 2em;
+}

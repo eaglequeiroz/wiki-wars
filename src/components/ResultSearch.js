@@ -7,6 +7,8 @@ import genericVehicle from '../assets/images/vehicles/vehicle-generic-pic.png';
 import genericSpecies from '../assets/images/species/species-generic-pic.png';
 import genericPlanet from '../assets/images/planets/planets-generic-pic.png';
 
+const baseURLpath = 'https://swapi.co/api';
+
 export default class ResultSearch extends React.Component {
 
   previousArrow(){
@@ -65,7 +67,7 @@ export default class ResultSearch extends React.Component {
 
             {
               this.props.result.map((item,k) => {
-                var cleanURL = item.url.replace('https://swapi.co/api','/detail');
+                var cleanURL = item.url.replace(baseURLpath,'/detail');
                 var imagePath = this.extractImagePath(cleanURL);
 
                 var print =
